@@ -1,4 +1,7 @@
+import "dotenv/config";
 import { handleExtractRequest } from "../src/server/extractService.ts";
+
+export const maxDuration = 60;
 
 export const config = {
   api: {

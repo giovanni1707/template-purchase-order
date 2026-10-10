@@ -87,12 +87,17 @@ const quotationResponseSchema = {
 };
 
 function getGeminiClient(): GoogleGenAI {
-  const apiKey = process.env.GEMINI_API_KEY || process.env.API_KEY;
-  if (!apiKey) {
+  const apiKey =
+    process.env.GEMINI_API_KEY ||
+    process.env.API_KEY ||
+    process.env.GOOGLE_API_KEY ||
+    process.env.GOOGLE_GENAI_API_KEY ||
+    process.env.VITE_GEMINI_API_KEY;
+  if (!apiKey || !apiKey.trim()) {
     throw new Error("GEMINI_API_KEY_MISSING");
   }
   return new GoogleGenAI({
-    apiKey,
+    apiKey: apiKey.trim(),
     httpOptions: {
       headers: {
         "User-Agent": "aistudio-build",
