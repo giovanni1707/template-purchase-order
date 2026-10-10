@@ -1,0 +1,6 @@
+{
+  "name": "MULTIVAC Purchase Order",
+  "description": "Fills Template_Purchase_Order_2026.xlsx with precision from MULTIVAC quotation PDFs using server-side Gemini double-extraction and XML-level Excel editing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
